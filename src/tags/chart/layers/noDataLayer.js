@@ -1,0 +1,26 @@
+export default function setupNoData(ctrl) {
+  var noData = ctrl.plane.append('text')
+    .attr('dy', '.3em')
+    .attr('text-anchor', 'middle')
+    .style('font-size', '2em')
+    .style('fill', '#999999')
+    .style('display', 'none');
+
+  noData.text('No Data');
+
+  var reposition = function() {
+    if (ctrl.isEmpty) {
+      const x = ctrl.width/2
+      const y = ctrl.height/2
+
+      noData
+        .attr('transform', `translate(${x}, ${y})`)
+        .style('display', null);
+    }
+    else {
+      noData.style('display', 'none');
+    }
+  };
+
+  ctrl.addRenderer(reposition);
+}
