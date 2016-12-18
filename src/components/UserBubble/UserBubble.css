@@ -1,0 +1,14 @@
+.UserBubble-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.UserBubble-image {
+  margin: 6px;
+  height: 33px;
+  width: 33px;
+
+  border: 2px solid white;
+  border-radius: 100%;
+}
